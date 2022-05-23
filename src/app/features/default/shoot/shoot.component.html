@@ -1,0 +1,20 @@
+<div id="test" class="bg-info container-fluid py-3" style="min-height: 778px;">
+
+    <div (mousemove)="move($event)" class="body">
+        <!-- //blockssssssss -->
+        <!-- <p id="b"></p> -->
+        <ng-container *ngFor="let block of blocksArr;">
+            <div class="blocks" [style.top]="block.top" [style.animation-delay]="block.delay">
+              {{block.id}}
+            </div>    
+        </ng-container>
+
+
+        <ng-container *ngFor="let snake of snakeArr;">
+            <div class="snake" [style.transition-duration]="snake.delay" [style.top]="snake.top"  [style.left]="snake.left">
+                {{snake.id}} 
+            </div>
+        </ng-container>
+
+    </div>
+</div>

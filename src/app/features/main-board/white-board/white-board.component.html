@@ -1,0 +1,22 @@
+<div class="container-fluid ">
+        <ng-container *ngFor="let row of boardArray; index as i;">
+            <div class="row r-1 bg-mutd text-center">
+
+                <div class="col-1 "></div>
+                <div class="col-1 "></div>
+
+                <ng-container *ngFor="let items of row; index as j;">
+                    <div [id]="'Bx'+i+''+j" (click)="move(i,j)" [class]="items.addCls" class="col-1 bbox"
+                        [class.bg-dark]="(i+j)%2"><img [src]="items.src" [class]="items.clipType"
+                            [class.whiteP]="items.playerC" alt="">
+                    </div>
+                </ng-container>
+
+                <div class="col-1 "></div>
+                <div class="col-1 "> <button *ngIf="i==7" (click)="undo()" [disabled]="disableBtn"
+                        class="btn btn-primary mt-4">UNDO</button> </div>
+
+            </div>
+        </ng-container>
+
+</div>
